@@ -1,0 +1,86 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden; /* Ngăn cuộn toàn trang */
+}
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 25% 75%; /* Sidebar 3/12 (25%), Content 9/12 (75%) */
+  grid-template-rows: 64px 1fr; /* Topbar cố định 64px */
+  height: calc(100vh - 64px);
+}
+
+.topbar {
+  grid-column: 1 / -1; /* Chiếm cả 2 cột */
+  grid-row: 1;
+  height: 64px;
+  background-color: #1976d2;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 2;
+  height: 100%;
+}
+
+.content {
+  grid-column: 2;
+  grid-row: 2;
+  overflow-y: auto; /* Cho phép cuộn */
+  height: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+/* Thanh cuộn tùy chỉnh */
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .grid-container {
+    grid-template-columns: 35% 65%; /* Điều chỉnh cho màn hình nhỏ */
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 100%;
+    grid-template-rows: 64px auto 1fr;
+  }
+
+  .sidebar {
+    grid-column: 1;
+    grid-row: 2;
+    height: auto;
+    max-height: 40vh;
+  }
+
+  .content {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}

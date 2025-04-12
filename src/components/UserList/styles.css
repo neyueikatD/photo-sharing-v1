@@ -1,0 +1,57 @@
+.user-list-container {
+    padding: 0 16px; /* Giữ padding ngang, bỏ padding top */
+    height: calc(100vh - 64px); /* Trừ chiều cao TopBar */
+    background-color: #fedddd;
+    overflow-y: auto; /* Tự động cuộn khi nội dung dài */
+    border-right: 5px solid #e0e0e0; /* Đường phân cách mỏng */
+  }
+  
+  .user-list-container h2 {
+    margin: 0;
+    padding: 16px 0 12px 0; /* Padding chỉ ở dưới */
+    font-size: 1.5rem;
+    position: sticky;
+    z-index: 1;
+  }
+  
+  .user-list-link {
+    display: block;
+    width: 100%;
+    padding: 12px 8px;
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .user-list-link:hover {
+    background-color: rgba(25, 118, 210, 0.04);
+  }
+  
+  .user-list-item {
+    padding: 0 !important;
+  }
+  
+  .user-list-divider {
+    margin: 0 !important;
+  }
+  
+  .user-list-footer {
+    padding: 16px 0;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Thanh cuộn tối giản */
+  .user-list-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .user-list-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+  
+  /* Đảm bảo các link không bị ẩn sau thanh cuộn */
+  @media (min-width: 600px) {
+    .user-list-container {
+      min-width: 250px; /* Độ rộng tối thiểu */
+    }
+  }

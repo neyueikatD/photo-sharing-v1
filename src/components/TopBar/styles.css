@@ -1,0 +1,98 @@
+/* .topbar-appBar {
+  height: 60;
+  justify-content: "center";
+} */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 64px;
+  background-color: #980c0c;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-bar-left {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.top-bar-right {
+  font-size: 1rem;
+}
+
+/* Thêm responsive cho mobile */
+@media (max-width: 600px) {
+  .top-bar {
+    padding: 0 10px;
+  }
+  
+  .top-bar-left {
+    font-size: 1rem;
+  }
+  
+  .top-bar-right {
+    font-size: 0.9rem;
+  }
+}/* TopBar/styles.css */
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 64px;
+  background-color: #980c0c; /* Màu primary của Material-UI */
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1100; /* Cao hơn các component khác */
+}
+
+.top-bar-left {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.top-bar-right {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Animation khi context thay đổi */
+.context-fade {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 600px) {
+  .top-bar {
+    padding: 0 16px;
+    height: 56px;
+  }
+  
+  .top-bar-left {
+    font-size: 1.1rem;
+  }
+  
+  .top-bar-right {
+    font-size: 0.9rem;
+    max-width: 50%;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
